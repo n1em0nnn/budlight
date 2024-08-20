@@ -1,0 +1,25 @@
+{% load static%}
+<style>
+    .a{
+    width:200px;
+    height:300px;
+    border: 1px solid black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    margin:15px;
+    }
+    h4{
+     border: 1px solid black;
+     }
+    img{
+    width:80px;}
+
+</style>
+
+<div class="a">
+    <img src="{% static 'main/img/cat.jpg'%}" alt="logo">
+    <h4>{{badgesample.title}}</h4>
+    <span>{{badgesample.about}}</span>
+</div>
