@@ -17,9 +17,15 @@
     width:80px;}
 
 </style>
-
+{% if badges%}
+{% for el in badges%}
 <div class="a">
     <img src="{% static 'main/img/cat.jpg'%}" alt="logo">
-    <h4>{{badgesample.title}}</h4>
-    <span>{{badgesample.about}}</span>
+
+    <h4>{{el.name}}</h4>
+    <span>{{el.description}}</span>
 </div>
+{%endfor%}
+{%else%}
+<p>У вас нет баджей!</p>
+{%endif%}
