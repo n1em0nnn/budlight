@@ -15,12 +15,21 @@
     <aside>
         <img src="{% static 'main/img/cat.jpg'%}" alt="logo">
         <span class="logo">GoodBadge</span>
+        {%if user.is_authenticated%}
         <h3>Навигация</h3>
         <ul>
             <a href="{% url 'home' %}"><li><i class="fa-solid fa-house"></i>Главная</li></a>
             <a href="{% url 'badges' %}"><li><i class="fa-solid fa-star"></i>Мои баджи</li></a>
             <a href=""><li><i class="fa-solid fa-circle-exclamation"></i>Все баджи</li></a>
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit">logout</button>
+            </form>
+
         </ul>
+        {%else%}
+        <a href="{% url 'login'%}?next={{request.path}}">Войти</a>
+        {%endif%}
     </aside>
     <main>
         {% block content%}
