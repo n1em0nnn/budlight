@@ -18,9 +18,20 @@
         {%if user.is_authenticated%}
         <h3>Навигация</h3>
         <ul>
+            {% for group in user.groups.all%}
+            {{group.name}}
+            {%if group.name == 'Students'%}
             <a href="{% url 'home' %}"><li><i class="fa-solid fa-house"></i>Главная</li></a>
             <a href="{% url 'badges' %}"><li><i class="fa-solid fa-star"></i>Мои баджи</li></a>
             <a href=""><li><i class="fa-solid fa-circle-exclamation"></i>Все баджи</li></a>
+            {%endif%}
+            {% if group.name == 'Prepods' %}
+            <a href="{% url 'home' %}"><li><i class="fa-solid fa-house"></i>Значки</li></a>
+            <a href="{% url 'badges' %}"><li><i class="fa-solid fa-star"></i>Мои ученики</li></a>
+            <a href=""><li><i class="fa-solid fa-circle-exclamation"></i>Все баджи</li></a>
+              {%endif%}
+            {%endfor%}
+
             <form method="post" action="{% url 'logout' %}">
                 {% csrf_token %}
                 <button type="submit">logout</button>
