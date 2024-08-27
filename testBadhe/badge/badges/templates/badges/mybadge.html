@@ -7,31 +7,7 @@
 
 </head>
    <h1>Тут будут мои баджи</h1>
-   <button  href="#" class="open-popup"><i class="fas fa-plus-circle"></i>Добавить значок</button>
-<div class="popup__bg">
-    <form class="popup">
-        <img src="images/close.svg" class="close-popup">
-        <label>
-            <input type="text" name="name">
-            <div class="label__text">
-                Ваше имя
-            </div>
-        </label>
-        <label>
-            <input type="tel" name="tel">
-            <div class="label__text">
-                Ваш телефон
-            </div>
-        </label>
-        <label>
-            <textarea name="message"></textarea>
-            <div class="label__text">
-                Ваше сообщение
-            </div>
-        </label>
-        <button type="submit">Отправить</button>
-    </form>
-</div>
+<a href="{% url 'badge_create'%}"> <button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавить значок</button></a>
 <style>
    div{
    display:flex;}
