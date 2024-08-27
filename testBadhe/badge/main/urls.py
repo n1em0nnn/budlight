@@ -3,7 +3,6 @@ from xml.etree.ElementInclude import include
 from django.urls import path
 from . import views
 urlpatterns = [
- path('', views.index, name = "home"),
- path('mybadges',views.mybadges,name = "badges")
+path('', views.index, name = "home")
 ]
 
