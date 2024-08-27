@@ -3,6 +3,8 @@ body{
 }
 aside{
     float:left;
+
+
     background:#E07A5F;
     width:20%;
     padding:3%;
@@ -54,4 +56,8 @@ form{
 margin-top:50px;
 margin-left:33%;
 width:500px;
+}
+.badge-wrap{
+display:flex;
+flex-wrap: wrap;
 }
