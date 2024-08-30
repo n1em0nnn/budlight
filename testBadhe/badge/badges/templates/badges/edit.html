@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'main/layout.html'%}
+
+{% block title %}Добавить значок{% endblock %}
+{% block content %}
+
+<div class="features">
+  <form method="post">
+    {% csrf_token %}
+    {{form.name}} <br>
+    {{form.desc}}<br>
+    {{form.cost}}<br>
+    <span>{{error}}</span>
+<button class="btn btn-success" type="submit">Принять</button
+  </form>
+</div>
+{%endblock%}
+</body>
+</html>

@@ -26,6 +26,9 @@
     <h4>{{el.name}}</h4>
     <span>{{el.desc}}</span>
     <span>{{el.cost}} очков</span>
+     <span>{{el.id}}</span>
+    <a href="{% url 'badge_edit' el.id%}"> <button class="btn btn-info"><i class="fas fa-plus-circle"></i>Редактировать</button></a>
+    <a href="{% url 'badge_create'%}"> <button class="btn btn-info"><i class="fas fa-plus-circle"></i>Удалить</button></a>
 </div>
 {%endfor%}
 {%else%}

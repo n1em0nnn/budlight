@@ -24,3 +24,19 @@ def createbadge(request):
         'error': error
     }
     return render(request,'badges/createbadge.html',data)
+def editbadge(request, id):
+    error = ''
+
+    if request.method == 'POST':
+        form = BadgeForm(request.POST(id))
+        if form.is_valid():
+            form.save()
+            return redirect('badge_home')
+        else:
+            error = 'Форма заполнена не верно'
+    form = BadgeForm()
+    data = {
+        'form': form,
+        'error': error
+    }
+    return render(request,'badges/edit.html',data)
