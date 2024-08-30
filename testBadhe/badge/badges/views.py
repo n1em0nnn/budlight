@@ -26,17 +26,20 @@ def createbadge(request):
     return render(request,'badges/createbadge.html',data)
 def editbadge(request, id):
     error = ''
-
     if request.method == 'POST':
-        form = BadgeForm(request.POST(id))
+        form = BadgeForm(request.POST, instance=Badge.objects.get(id=id))
         if form.is_valid():
             form.save()
             return redirect('badge_home')
         else:
             error = 'Форма заполнена не верно'
-    form = BadgeForm()
+    form = BadgeForm(instance=Badge.objects.get(id=id))
     data = {
         'form': form,
         'error': error
     }
     return render(request,'badges/edit.html',data)
+
+def deletebadge(request, id):
+    Badge.objects.filter(id=id).delete()
+    return redirect('badge_home')
