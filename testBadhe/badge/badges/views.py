@@ -12,9 +12,10 @@ def mybadges(request):
 def createbadge(request):
     error = ''
     if request.method == 'POST':
-        form = BadgeForm(request.POST)
+        form = BadgeForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            img_obj = form.instance
             return redirect('badge_home')
         else:
             error = 'Форма заполнена не верно'
@@ -27,7 +28,7 @@ def createbadge(request):
 def editbadge(request, id):
     error = ''
     if request.method == 'POST':
-        form = BadgeForm(request.POST, instance=Badge.objects.get(id=id))
+        form = BadgeForm(request.POST,request.FILES, instance=Badge.objects.get(id=id))
         if form.is_valid():
             form.save()
             return redirect('badge_home')

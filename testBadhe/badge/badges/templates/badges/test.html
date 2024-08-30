@@ -21,8 +21,7 @@
 {% if badges%}
 {% for el in badges%}
 <div class="a">
-    <img src="{% static 'main/img/cat.jpg'%}" alt="logo">
-
+    <img src="{{el.image.url}}">
     <h4>{{el.name}}</h4>
     <span>{{el.desc}}</span>
     <span>{{el.cost}} очков</span>

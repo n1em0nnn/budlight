@@ -4,8 +4,9 @@
 {% block content %}
 
 <div class="features">
-  <form method="post">
+  <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
+    {{form.image}}<br><br>
     {{form.name}} <br>
     {{form.desc}}<br>
     {{form.cost}}<br>

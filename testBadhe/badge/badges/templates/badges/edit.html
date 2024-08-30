@@ -1,3 +1,4 @@
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +12,10 @@
 {% block content %}
 
 <div class="features">
-  <form method="post">
+  <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{form.name}} <br>
+    {{form.image}}<br>
+    {{form.name}}<br>
     {{form.desc}}<br>
     {{form.cost}}<br>
     <span>{{error}}</span>

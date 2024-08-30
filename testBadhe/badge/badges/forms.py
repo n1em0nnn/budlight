@@ -5,7 +5,7 @@ from django.forms import ModelForm,Textarea,TextInput
 class BadgeForm(ModelForm):
     class Meta:
         model = Badge
-        fields = ['name','desc','cost']
+        fields = ['image','name','desc','cost']
 
         widgets={
             'name': TextInput(attrs={
