@@ -28,7 +28,7 @@
             {%endif%}
             {% if group.name == 'Prepods' %}
             <a href="{% url 'badge_home' %}"><li><i class="fa-solid fa-house"></i>Значки</li></a>
-            <a href=""><li><i class="fa-solid fa-star"></i>Мои ученики</li></a>
+            <a href="{% url 'users_home' %}"><li><i class="fa-solid fa-star"></i>Мои ученики</li></a>
             <a href=""><li><i class="fa-solid fa-circle-exclamation"></i>Все баджи</li></a>
               {%endif%}
             {%endfor%}

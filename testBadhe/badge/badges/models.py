@@ -9,3 +9,8 @@ class Badge(models.Model):
     def __str__(self):
         return self.name
 
+
+
+class BadgeToUser(models.Model):
+    user_id=models.IntegerField('Код пользователя')
+    badge_id= models.IntegerField('Код значка')
