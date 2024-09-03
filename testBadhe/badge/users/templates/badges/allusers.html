@@ -1,0 +1,32 @@
+
+{% extends 'main/layout.html'%}
+
+{% block title %}Пользователи{% endblock %}
+{% block content %}
+<head>
+
+</head>
+   <h1>Все пользователи</h1>
+<a href="{% url 'users_create'%}"> <button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавить пользователя</button></a>
+
+
+<table cellspacing="0" cellpadding="0" class="user-table">
+   <tr id="user-table-top">
+      <th>
+         <h3>UserName</h3>
+      </th>
+        <th>
+         <h3>Groups</h3>
+      </th>
+      <th>
+         <h3>Edit user</h3>
+      </th>
+      <th>
+         <h3>Delete</h3>
+      </th>
+   </tr>
+
+   {% include 'badges/user.html' %}
+
+   </table>
+{% endblock %}
