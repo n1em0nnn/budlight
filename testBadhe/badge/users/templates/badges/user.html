@@ -28,8 +28,8 @@
          <h5>{{group.name}}</h5>
           {%endfor%}
       </th>
-      <th><button><i class="fas fa-edit"></i></button></th>
-      <th><button><i class="fas fa-user-times"></i></button>
+      <th><button><a href="{% url 'users_edit' el.id%}"><i class="fas fa-edit"></i></a></button></th>
+     <th><button><a href="{% url 'users_delete' el.id%}"><i class="fas fa-user-times"></i></a></button>
       </th>
  </tr>
 {%endfor%}
