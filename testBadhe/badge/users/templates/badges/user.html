@@ -22,9 +22,9 @@
 {% for el in users%}
  <tr>
       <th>
-         <h5>{{el.user.username}}</h5>
+         <h5>{{el.username}}</h5>
       </th>
-      <th>{%for group in el.user.groups.all%}
+      <th>{%for group in el.groups.all%}
          <h5>{{group.name}}</h5>
           {%endfor%}
       </th>

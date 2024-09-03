@@ -7,7 +7,7 @@ from .models import Profile
 from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 def mybadges(request):
-    users = Profile.objects.all()
+    users = User.objects.all()
 
     return render(request,'badges/allusers.html',{'users':users})
 
@@ -16,9 +16,12 @@ def createuser(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
-            Profile.objects.create(user=form.save(), group=form.cleaned_data.get('group'))
+            user = form.save()
             Profile.objects.create(user=form.save(), fullname=form.cleaned_data.get('fullname'))
+
+            usergroup = form.cleaned_data.get('groups')
+            user.groups.add(usergroup)
+
             return redirect('users_home')
         else:
             error = 'Форма заполнена не верно'
