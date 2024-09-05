@@ -1,12 +1,14 @@
+from lib2to3.pgen2.tokenize import group
+
 from .models import Badge
 
-from django.forms import ModelForm,Textarea,TextInput
+from django.forms import ModelForm, Textarea, TextInput, ModelChoiceField
+
 
 class BadgeForm(ModelForm):
     class Meta:
         model = Badge
         fields = ['image','name','desc','cost']
-
         widgets={
             'name': TextInput(attrs={
                 'class': 'form-control',
