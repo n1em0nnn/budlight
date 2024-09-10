@@ -22,7 +22,7 @@
 {% for el in users%}
  <tr>
       <th>
-         <h5>{{el.username}}</h5>
+         <h5><a href="{% url 'users_profile' el.id%}">{{el.username}}</a></h5>
       </th>
       <th>{%for group in el.groups.all%}
          <h5>{{group.name}}</h5>
