@@ -1,0 +1,18 @@
+
+{% extends 'main/layout.html'%}
+
+{% block title %}Update{% endblock %}
+{% block content %}
+
+<div class="features">
+    {% csrf_token %}
+    {{users.username}} <br>
+  {% for el in group%}
+    {{ el.name }}<br>
+  {%endfor%}
+    {{users.get_full_name}} <br>
+  <a href="{% url 'users_home' %}"><button class="btn btn-primary">Вернуться</button></a>
+</div>
+{%endblock%}
+</body>
+</html>
