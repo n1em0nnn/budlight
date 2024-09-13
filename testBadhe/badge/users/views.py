@@ -2,7 +2,7 @@ from dbm import error
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, Group
 from django.template.context_processors import request
-
+from openpyxl import Workbook
 from .forms import SignUpForm
 
 from django.contrib.auth.forms import UserCreationForm
@@ -20,8 +20,6 @@ def createuser(request):
             user = form.save()
             usergroup = form.cleaned_data.get('groups')
             user.groups.add(usergroup)
-            first_name = form.cleaned_data['first_name']
-            last_name = form.cleaned_data['last_name']
             return redirect('users_home')
         else:
             error = 'Форма заполнена не верно'
@@ -60,3 +58,6 @@ def userprofile(request, id):
 def deleteuser(request, id):
     User.objects.filter(id=id).delete()
     return redirect('users_home')
+
+def getexcel(request):
+    pass
