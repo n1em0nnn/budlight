@@ -1,0 +1,18 @@
+{% extends 'main/layout.html'%}
+
+{% block title %}Добавить значок{% endblock %}
+{% block content %}
+
+<div class="features">
+  <form method="post">
+    {% csrf_token %}
+    {{form.name}} <br>
+    {{form.level}} <br>
+    {{form.city}} <br>
+    {{form.org}} <br>
+    {{form.fcdo}} <br>
+    <span>{{error}}</span>
+<button class="btn btn-success" type="submit">Добавить пользователя</button>
+  </form>
+</div>
+{%endblock%}

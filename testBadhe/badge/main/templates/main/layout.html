@@ -16,10 +16,10 @@
     <aside>
         <img src="{% static 'main/img/cat.jpg'%}" alt="logo">
         <span class="logo">GoodBadge</span>
-        {%if user.is_authenticated%}
+        {%if customuser.is_authenticated%}
         <h3>Навигация</h3>
         <ul>
-            {% for group in user.groups.all%}
+            {% for group in customuser.groups.all%}
             {{group.name}}
             {%if group.name == 'Students'%}
             <a href="{% url 'home' %}"><li><i class="fa-solid fa-house"></i>Главная</li></a>

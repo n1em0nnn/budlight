@@ -1,0 +1,35 @@
+
+{% extends 'main/layout.html'%}
+
+{% block title %}Мероприятия{% endblock %}
+{% block content %}
+<head>
+
+</head>
+   <h1>Все мероприятия</h1>
+<a href="{% url 'compets_create'%}"> <button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавить мероприятие</button></a>
+
+
+<table cellspacing="0" cellpadding="0" class="user-table">
+   <tr id="user-table-top">
+      <th>
+         <h5>Наименование</h5>
+      </th>
+        <th>
+         <h5>Уровень</h5>
+      </th>
+      <th>
+         <h5>Организатор</h5>
+      </th>
+      <th>
+         <h5>Город</h5>
+      </th>
+       <th>
+         <h5>ФЦДО</h5>
+      </th>
+   </tr>
+
+   {% include 'compets/compet.html' %}
+
+   </table>
+{% endblock %}

@@ -5,15 +5,15 @@
 {% endblock %}
 {% block content %}
   <div class="features">
-      <h1>{{ title }}</h1>
-      {% for obj in news %}
+       {% for obj in news %}
       <div class="alert alert-warning">
             <h3>{{obj.title_news}}</h3>
             {{obj.dates}}
             <p>{{obj.anons}}</p>
       </div>
       {% endfor %}
-      <button class="btn btn-warning">На страницу про нас</button>
+            <button class="btn btn-warning">На страницу про нас</button>
+
   </div>
 {% for i in values%}
 <p>{{i}}</p>

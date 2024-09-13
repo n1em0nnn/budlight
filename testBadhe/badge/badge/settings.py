@@ -21,6 +21,8 @@ MEDIA_URL = '/media/'
 # Путь хранения картинок
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
+AUTH_USER_MODEL = "users.CustomUser"
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -39,6 +41,8 @@ INSTALLED_APPS = [
     'main',
     'badges',
     'users',
+    'compet',
+    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
