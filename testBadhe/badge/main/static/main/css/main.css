@@ -3,8 +3,6 @@ body{
 }
 aside{
     float:left;
-
-
     background:#E07A5F;
     width:20%;
     padding:3%;
@@ -89,4 +87,11 @@ flex-wrap: wrap;
 }
 #user-table-top {
     background-color: rgba(22, 43, 68, 0.4);
+}
+.alert-warning{
+    float: left;
+    clear: both;
+    width: 400px;
+    margin: 20px 34%;
+    text-align: left;
 }

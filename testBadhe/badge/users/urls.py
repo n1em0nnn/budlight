@@ -5,6 +5,7 @@ urlpatterns = [
  path('',views.mybadges,name = "users_home"),
  path('create/', views.createuser, name = "users_create"),
  path('edit/<int:id>/', views.edituser, name = "users_edit"),
- path('delete/<int:id>/', views.deleteuser, name = "users_delete")
+ path('delete/<int:id>/', views.deleteuser, name = "users_delete"),
+ path('profile/<int:id>/', views.userprofile, name = "users_profile")
 
 ]

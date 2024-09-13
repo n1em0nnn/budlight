@@ -9,10 +9,11 @@
 
     {% csrf_token %}
     {{form.username}} <br>
-    {{form.group}} <br>
-    {{form.fullname}} <br>
+    {{ form.groups }}<br>
+    {{form.first_name}} <br>
+    {{form.last_name}} <br>
     <span>{{error}}</span>
-<button class="btn btn-success" type="submit">Принять</button
+<button class="btn btn-success" type="submit">Принять</button>
   </form>
 </div>
 {%endblock%}

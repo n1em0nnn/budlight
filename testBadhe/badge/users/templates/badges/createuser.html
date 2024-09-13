@@ -7,8 +7,9 @@
   <form method="post">
     {% csrf_token %}
     {{form.username}} <br>
-    {{form.group}} <br>
-    {{form.fullname}} <br>
+    {{form.groups}} <br>
+    {{form.first_name}} <br>
+    {{form.last_name}} <br>
     {{form.password1}} <br>
     {{form.password2}} <br>
     <span>{{error}}</span>
